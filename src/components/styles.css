@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text');
+
+/* FONTS & IMAGES:
+- Colors, Fonts, Sizing, Positioning, Animations */
+
+/* Heading basic styling */
+h1 {
+    font-family: "Markazi text";
+    color:#F4CE14;
+    font-weight: 500;
+    font-size: 64px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h2 {
+    font-family: "Markazi text";
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h3 {
+    font-family: "Karla";
+    font-size: 18px;
+    font-weight: 800;
+}
+
+h4, label, #showTable, .checkTitle {
+    font-family: "Karla";
+    font-size: 16px;
+    font-weight: 600;
+}
+
+p {
+    padding-top: 2vh;
+    line-height: 1.5;
+}
+
+input, p, select, div, option, textarea {
+    font-family: "Karla";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+input, select, textarea {
+    border-radius: 6px;
+    resize: none;
+    border: 1px black solid;
+    padding: 0.5vh 0.5vh 0.5vh 1vh;
+}
+
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 20px 10px #F4CE14;
+}
+
+.formValidation.invalid {
+  border: 3px solid red;
+}
+
+.errorMessages {
+    font-family: "Karla";
+    font-size: 14px;
+    font-weight: 400;
+    color: red;
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+}
+
+header a, header a:visited {
+    color: black;
+}
+
+footer a, footer a:visited {
+    color: white;
+}
+
+header a:hover, footer a:hover { 
+    color:#F4CE14;
+}
+
+.activeLink {
+    color:#F4CE14 !important;
+}
+
+
+/* Button styling */
+button, .tableCancelBtn, .tableNextBtn, .contactsNextBtn, .contactsCancelBtn {
+    display: grid;
+    text-align: center;
+    align-content: center;
+    justify-items: center;
+    width: 250px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: "Karla";
+    font-size: 16px;
+    font-weight: 500;
+    border: black 2px solid;
+}
+
+.tableNextBtn:disabled, .contactsNextBtn:disabled {
+    opacity: 20%;
+}
+
+#blackButton {
+    background-color: black;
+    color: white;
+}
+
+#greyButton {
+    background-color: #EDEFEE;
+    color: black;
+}
+
+#blackButton:not(:disabled):hover, #greyButton:not(:disabled):hover {
+    border: black 2px solid;
+    background-color: #F4CE14;
+    color: black;
+}
+
+
+/* Header styling */
+header, nav {
+    background-color: white;
+}
+
+.navType {
+    font-family: "Karla";
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+}
+
+
+/* Footer styling */
+#footTitle {
+    font-family: "Karla";
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin: 3vh 0 0 0;
+}
+
+footer li {
+    font-family: "Karla";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.logo {
+    max-width: 80%;
+    min-width: 80%;
+}
+
+.footerLogo {
+    width: 80%;
+}
+
+footer {
+    background-color: #495E57;
+}
+
+
+/*---------------------------------------------------------------------------*/
+
+
+/* HOMEPAGE STYLING */
+
+/* Hero Section styling */
+.titleDesc h2, p {
+    color:white;
+}
+
+.titleDesc button {
+    margin-top: 5vh;
+}
+
+.titleDesc p {
+    font-family: "Karla";
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#heroSection {
+    background-color: #495E57;
+}
+
+.homeImg {
+    max-width: 70%;
+    border-radius: 16px;
+}
+
+
+/* Specials */
+.specialCard img {
+    width:100%;
+    height: 170px;
+    object-fit:cover;
+    border-radius: 16px 16px 0 0;
+}
+
+.specialCard p, #testimonials p {
+    color: black;
+}
+
+.specialCard section {
+    background-color: #EDEFEE;
+    border-radius: 16px 16px 0 0;
+    border: 1px solid black;
+}
+
+.specialCard h3,
+.specialCard p,
+.specialCard h4 {
+    padding: 0vh 2vh 0vh 2vh;
+}
+
+.specialCard h4 {
+    margin-top: auto;
+}
+
+
+/* Testimonials */
+#testimonials img {
+    border: 1px solid black;
+    width: 100%;
+}
+
+#testimonials section {
+    background-color: #FBDABB;
+    border: 1px solid black;
+}
+
+#testimonials h2 {
+    text-align: center;
+}
+
+
+/* Introductions animation setup */
+#introSection {
+    position: relative;
+}
+
+.introBackground {
+    z-index: -1;
+}
+
+.introBackground::before {
+    content: "";
+    background-image: url('../images/Mario\ and\ Adrian\ A.jpg');
+    background-size: cover;
+    background-position: top;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.intro {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes changeBackground {
+    0%, 100% {
+        opacity: 0.3;
+        background-image: url('../images/Mario\ and\ Adrian\ A.jpg');
+    }
+    50% {
+        opacity: 0.3;
+        background-image: url('../images/Mario\ and\ Adrian\ b.jpg');
+        background-position: bottom;
+    }
+}
+
+.introBackground::before {
+    animation: changeBackground 25s infinite; 
+}
+
+
+/* Introductions styling */
+#introSection p {
+    color: black;
+}
+
+#introSection h1 {
+    color: #495E57;
+}
+
+/*---------------------------------------------------------------------------*/
+
+/* BOOKINGPAGE STYLING */
+
+/* Title */
+.reservedTableImg {
+    max-width: 100%;
+}
+#startBookingTitle, #finishBooking {
+    background-color: #495E57;
+}
+
+.contactLink {
+    color: #F4CE14;
+    text-decoration: underline;
+}
+
+
+/* Form */
+#tableReservationImg {
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+#tableReservationImg > img:not(.kitchen, #tb_1) {
+    max-width: 80%;
+    max-height: auto;
+}
+
+.kitchen {
+    max-width: 100%;
+}
+
+#tb_1 {
+    max-height: 50%;
+    max-width: auto;
+}
+
+.dsc {
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+    padding-bottom: 4vh;
+}
+
+#greenBox {
+    height: 10px;
+    width: 10px;
+    border: 1px solid black;
+    background-color: #CFFFDA;
+}
+  
+#redBox {
+    height: 10px;
+    width: 10px;
+    border: 1px solid black;
+    background-color: #FBDABB;
+}
+
+.selected {
+    border: 2px solid black;
+}
+
+input[type="checkbox"] {
+    height: 18px;
+    width: 18px;
+    margin: 0;
+}
+
+#reservationTime {
+    margin-top: 1px;
+}
+
+#reservationDate {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#tbs_1, #tbs_2, #tbs_3, #tbs_4, #tbs_5, #tbs_6, #tbs_7, #tbs_8, #tbs_9 {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+.bookImg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#addContactsContainer {
+    background-image: url("../images/lemons_background.png");
+}

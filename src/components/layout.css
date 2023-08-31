@@ -1,0 +1,639 @@
+/* Component-wise Grid Definition */
+
+/* Homepage Grid layout */
+.homeGrid {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 20px;
+    grid-template-areas:
+      " . . nav nav nav nav nav nav nav nav  . . "                                                                            /* HEADER with LOGO and NAVIGATION BAR */
+      " . . titleDesc titleDesc titleDesc titleDesc titleImg titleImg titleImg titleImg . ."                                  /* USED by CallToAction.js */
+      " . . specialTitle specialTitle specialTitle specialTitle specialTitle specialButton specialButton specialButton . ."   /* USED by Specials.js */
+      " . . specialCard specialCard specialCard specialCard specialCard specialCard specialCard specialCard . . "             /* ...CONTINUES */
+      " . . reviewTitle reviewTitle reviewTitle reviewTitle reviewTitle reviewTitle reviewTitle reviewTitle . . "             /* CustomersSay.js */
+      " . . reviewCard1 reviewCard1 reviewCard2 reviewCard2 reviewCard3 reviewCard3 reviewCard4 reviewCard4 . . "             /* ...CONTINUES */
+      " . . introContent introContent introContent introContent introContent introContent introContent introContent . . "     /* USED by Chicago.js */
+      " . . filler filler filler filler filler filler filler filler . . "                                                     /* ...CONTINUES */
+      " . . footerLogo footerLogo footerHeader1 footerHeader1 footerHeader2 footerHeader2 footerHeader3 footerHeader3 . . "   /* FOOTER with LOGO and NAVIGATION LINKS */
+      " . . footerLogo footerLogo footerLink1 footerLink1 footerLink2 footerLink2 footerLink3 footerLink3 . . ";              /* ...CONTINUES */
+  }
+
+/* Table Details layout */
+.tableGrid {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 20px;
+    grid-template-areas:
+      " largeTitleImg largeTitleImg largeTitleImg largeTitleImg largeTitleImg largeTitleImg largeTitleImg largeTitleImg largeTitleImg largeTitleImg largeTitleImg largeTitleImg " 
+      " . . altTitleDesc altTitleDesc altTitleDesc altTitleDesc altTitleDesc altTitleDesc altTitleDesc altTitleDesc . ."
+      " . . titleForm titleForm titleForm titleForm titleForm titleForm titleForm titleForm . . "
+      " . . tableForm tableForm tableForm tableForm tableImg tableImg tableImg tableImg . . "
+      " . . contactsForm contactsForm contactsForm contactsForm contactsForm contactsForm . . . . "
+      " . . tableNextBtn tableNextBtn tableNextBtn tableNextBtn tableCancelBtn tableCancelBtn tableCancelBtn tableCancelBtn . ."
+      " . . contactsNextBtn contactsNextBtn contactsNextBtn contactsCancelBtn contactsCancelBtn contactsCancelBtn . . . . " 
+}
+
+
+/* Parent container & overall definition */
+#appContainer {
+  display: grid;
+  grid-template-areas: 
+  "header header header"
+  "content content content"
+  "footer footer footer";
+  height: 100%;
+}
+
+#contentContainer {
+  grid-area: content;
+  padding-bottom: 10vh;
+}
+
+#contentContainer > article {
+  padding: 10vh 0 5vh 0;
+}
+
+article section {
+  margin-top: 8vh;
+}
+
+
+/* Grid layout config with Flexbox used as container config */
+/* Header */
+header {
+  grid-area: header;
+  position: sticky;
+  align-self: start;
+  z-index: 2;
+  top:0;
+  width: 100%;
+}
+
+nav {
+  grid-area: nav;
+}
+
+.navGrid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.logoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.navLinks {
+  max-width: 100%;
+}
+
+.navType {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1vh;
+  column-gap: 20px;
+}
+
+
+/* Lists */
+ul {
+  padding-inline-start: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+/* Footer */
+footer {
+  grid-area: footer;
+  padding: 3vh 0 3vh 0;
+}
+
+.footerLogo {
+  grid-area: footerLogo;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.footerHeader1 {
+  grid-area: footerHeader1;
+}
+
+.footerHeader2 {
+  grid-area: footerHeader2;
+}
+
+.footerHeader3 {
+  grid-area: footerHeader3;
+}
+
+.footerLink1 {
+  grid-area: footerLink1;
+}
+
+.footerLink2 {
+  grid-area: footerLink2;
+}
+
+.footerLink3 {
+  grid-area: footerLink3;
+}
+
+
+/*---------------------------------------------------------------------------*/
+
+
+/* HOMEPAGE */
+
+/* Hero Section */
+#heroSection {
+  padding: 10vh 0 10vh 0;
+}
+
+.titleDesc {
+  grid-area: titleDesc;
+}
+
+.titleImg {
+  grid-area: titleImg;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+
+/* Specials */
+.specialTitle {
+ grid-area: specialTitle;
+}
+
+.specialButton {
+  grid-area: specialButton;
+}
+
+.specialCard {
+  grid-area: specialCard;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4vh;
+}
+
+.specialCard div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.specialCard section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100%;
+}
+
+.specialButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+/* Testimonials */
+.reviewTitle {
+  grid-area: reviewTitle;
+}
+
+#testimonials section {
+  padding: 2vh;
+}
+
+#testimonials section div:last-of-type {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 2vh;
+  column-gap: 2vh;
+  align-items: center;
+}
+
+.reviewCard1 {
+  grid-area: reviewCard1;
+}
+
+.reviewCard2 {
+  grid-area: reviewCard2;
+}
+
+.reviewCard3 {
+  grid-area: reviewCard3;
+}
+
+.reviewCard4 {
+  grid-area: reviewCard4;
+}
+
+
+/* Introduction section */
+.introContent {
+  grid-area: introContent;
+}
+
+.introContent {
+  margin: 10vh 0 10vh 0;
+}
+
+
+/*---------------------------------------------------------------------------*/
+
+
+/* BOOKING PAGE */
+
+/* Title */
+#startBookingTitle, #finishBooking {
+  padding: 0;
+}
+
+.largeTitleImg {
+  grid-area: largeTitleImg;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  max-height: 50vh;
+}
+
+.altTitleDesc {
+  grid-area: altTitleDesc;
+  padding: 10vh 0 10vh 0;
+}
+
+
+/* Form */
+#divTable {
+  width: 100%;
+}
+
+.titleForm {
+  grid-area: titleForm;
+}
+
+.tableForm {
+  grid-area: tableForm;
+  margin-bottom: 5vh;
+  max-width: 100%;
+}
+
+.tableImg {
+  max-width: 100%;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: repeat(6, 1fr);
+  gap: 2vh; 
+  align-items: center;
+}
+
+.formGrid label,
+.formGrid input,
+.formGrid select {
+  max-width: 100%; 
+  max-height: 100%;
+}
+
+.tableImg {
+  grid-area: tableImg;
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-content: flex-end;
+  margin: 8vh 0 5vh 0;
+}
+
+#tableReservationImg {
+  max-width: 100%;
+  justify-items: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  gap: 0.5vh;
+  padding: 2vh;
+  grid-template-areas: 
+    " dsc dsc dsc "
+    " tb1 tb2 tb3 "
+    " tb1 tb4 tb5 "
+    " kitchen tb6 tb7"
+    " kitchen tb8 tb9";
+}
+
+.dsc {
+  grid-area: dsc;
+}
+
+.kitchen {
+  grid-area: kitchen;
+}
+
+.tb1 {
+  grid-area: tb1;
+}
+
+.tb2 {
+  grid-area: tb2;
+}
+
+.tb3 {
+  grid-area: tb3;
+}
+
+.tb4 {
+  grid-area: tb4;
+}
+
+.tb5 {
+  grid-area: tb5;
+}
+
+.tb6 {
+  grid-area: tb6;
+}
+
+.tb7 {
+  grid-area: tb7;
+}
+
+.tb8 {
+  grid-area: tb8;
+}
+
+.tb9 {
+  grid-area: tb9;
+}
+
+.tableReservation {
+  display: grid;
+  grid-template-columns: repeat(4 1fr);
+}
+
+.placeHolder {
+  max-width: 100%;
+}
+
+.tableNextBtn {
+  grid-area: tableNextBtn;
+}
+
+.tableCancelBtn {
+  grid-area: tableCancelBtn;
+}
+
+.iconTitle {
+  display: flex;
+  align-items: center;
+  gap: 3vh;
+}
+
+.checkGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: repeat(5, 1fr);
+  gap: 4vh; 
+  align-items: center;
+}
+
+.contactNames {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  column-gap: 2vh;
+  max-width: 100%;
+}
+
+.contactLayout {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  width: 100%;
+  row-gap: 2vh;
+}
+
+.contactLayout input, .contactLayout label {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.contactsForm {
+  grid-area: contactsForm;
+  max-width: 100%;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  width: 100%;
+  row-gap: 2vh;
+  padding-bottom: 4vh;
+}
+
+#finishBooking {
+  padding-bottom: 5vh;
+}
+
+.contactsNextBtn {
+  grid-area: contactsNextBtn;
+}
+
+.contactsCancelBtn {
+  grid-area: contactsCancelBtn;
+}
+
+
+
+/*---------------------------------------------------------------------------*/
+
+
+/* SMALL SCREEN */
+
+/* Smaller screens: Grid scaling and other actions to improve visuals */
+@media screen and (max-width: 575px) {
+  .homeGrid {
+    display: grid;
+      max-width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      grid-template-areas:
+      "nav nav nav nav"
+      "titleImg titleImg titleImg titleImg"
+      "titleDesc titleDesc titleDesc titleDesc"
+      "specialTitle specialTitle specialTitle specialTitle"
+      "specialButton specialButton specialButton specialButton"
+      "specialCard specialCard specialCard specialCard"
+      "reviewTitle reviewTitle reviewTitle reviewTitle"
+      "reviewCard1 reviewCard1 reviewCard1 reviewCard1"
+      "reviewCard2 reviewCard2 reviewCard2 reviewCard2"
+      "reviewCard3 reviewCard3 reviewCard3 reviewCard3"
+      "reviewCard4 reviewCard4 reviewCard4 reviewCard4"
+      "introContent introContent introContent introContent"
+      "footerLogo footerHeader1 footerHeader1 footerHeader1"
+      "footerLogo footerLink1 footerLink1 footerLink1"
+      "footerLogo footerHeader2 footerHeader2 footerHeader2"
+      "footerLogo footerLink2 footerLink2 footerLink2"      
+      "footerLogo footerHeader3 footerHeader3 footerHeader3"
+      "footerLogo footerLink3 footerLink3 footerLink3";
+  }
+  .tableGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100%;
+    padding: 5vh;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas:
+      "largeTitleImg largeTitleImg largeTitleImg largeTitleImg"
+      "altTitleDesc altTitleDesc altTitleDesc altTitleDesc"
+      "titleForm titleForm titleForm titleForm"
+      "tableForm tableForm tableForm tableForm"
+      "tableImg tableImg tableImg tableImg"
+      "contactsForm contactsForm contactsForm contactsForm" 
+      "tableNextBtn tableNextBtn tableNextBtn tableNextBtn"
+      "tableCancelBtn tableCancelBtn tableCancelBtn tableCancelBtn"
+      "contactsNextBtn contactsNextBtn contactsNextBtn contactsNextBtn"
+      "contactsCancelBtn contactsCancelBtn contactsCancelBtn contactsCancelBtn";
+  }
+
+  nav {
+    min-width: 0;
+    padding: 0 5vh 0 5vh;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  footer {
+    padding: 2vh 5vh 2vh 5vh;
+  }
+
+  #contentContainer > article {
+    padding: 5vh;
+  }
+
+  .footerLink1, .footerLink2, .footerLink3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 1vh;
+    column-gap: 20px;
+  }
+
+  .altTitleDesc {
+    padding: 5vh;
+  }
+
+  #heroSection {
+    padding: 5vh 0 5vh 0;
+  }
+
+  #heroSection h1 {
+    padding-top: 5vh;
+  }
+
+  #heroSection div {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin: 0 4vh 0 4vh;
+  }
+
+  .specialTitle{
+    padding-bottom: 4vh;
+  }
+
+  .specialCard {
+    grid-template-columns: 1fr;
+    gap: 5vh;
+  }
+  
+  .specialTitle, .specialButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .specialButton {
+    margin-top: 0;
+  }
+
+  #testimonials section {
+    margin-bottom: 4vh;
+  }
+
+  article section {
+    margin-top: 5vh;
+  }
+
+  .tableImg {
+    margin: 0 0 4vh 0;
+}
+
+  .formGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, auto);
+    align-items: center;
+    justify-items: stretch;
+    max-width: 100%;
+    gap: 2vh; 
+  }
+
+  .titleForm {
+    margin-bottom: 5vh
+  }
+
+  svg {
+    width: 30px;
+  }
+  .iconTitle {
+    display: grid;
+    grid-template-columns: 15% 50vw;
+    gap: 0;
+  }
+
+  .react-datepicker__portal {
+    min-width: 100%;
+  }
+
+  .react-datepicker__input-container {
+    box-sizing: border-box;
+  }
+
+  .tableImg {
+    justify-content: flex-end;
+  }
+
+  .tableCancelBtn, .contactsCancelBtn {
+    margin-top: 4vh;
+  }
+
+  .checkGrid {
+    padding: 0;
+  }
+
+  .contactGrid {
+    grid-template-rows: repeat(6, auto);
+    min-width: 80vw;
+  }
+
+  .contactNames {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 2vh;
+  }
+}
